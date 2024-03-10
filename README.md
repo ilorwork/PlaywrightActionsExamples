@@ -1,2 +1,3 @@
 # PlaywrightActionsExamples
-Covering all Playwright-Actions with examples
+
+Covering the most common Playwright-Actions with examples
