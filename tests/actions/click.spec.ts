@@ -5,35 +5,33 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("single mouse click", async ({ page }) => {
-  await page.getByRole("button").click();
+  await page.getByText("Get started").click();
 });
 
 test("double mouse click", async ({ page }) => {
-  await page.getByText("Item").dblclick();
+  await page.getByText("Get started").dblclick();
 });
 
 test("mouse right click", async ({ page }) => {
-  await page.getByText("Item").click({ button: "right" });
+  await page.getByText("Get started").click({ button: "right" });
 });
 
 test("press shift and then click", async ({ page }) => {
-  await page.getByText("Item").click({ modifiers: ["Shift"] });
-});
-
-test("mouse hover over element", async ({ page }) => {
-  await page.getByText("Item").hover();
+  await page.getByText("Get started").click({ modifiers: ["Shift"] });
 });
 
 test("mouse click by coordinates", async ({ page }) => {
-  // Click the top left corner
-  await page.getByText("Item").click({ position: { x: 0, y: 0 } });
+  // This test locate the "get started" button,
+  // and then perform a click at 50 50 coordinate where the Docs button is
+  await page.getByText("Get started").click({ position: { x: 50, y: 50 } });
+  await page.pause();
 });
 
 // Docs - https://playwright.dev/docs/input#forcing-the-click
 test("forced mouse click", async ({ page }) => {
-  await page.getByRole("button").click({ force: true });
+  await page.getByText("Get started").click({ force: true });
 });
 
 test("perform click by dispatching a click event", async ({ page }) => {
-  await page.getByRole("button").dispatchEvent("click");
+  await page.getByText("Get started").dispatchEvent("click");
 });
