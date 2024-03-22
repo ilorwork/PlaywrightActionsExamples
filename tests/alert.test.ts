@@ -15,3 +15,5 @@ test("accept basic browser alert", async ({ page }) => {
 test("dismiss basic browser alert", async ({ page }) => {
   page.on("dialog", (dialog) => dialog.dismiss());
 });
+
+// TODO: add http credentials alert handling
