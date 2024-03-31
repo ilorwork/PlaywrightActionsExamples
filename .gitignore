@@ -135,3 +135,5 @@ dist
 /blob-report/
 /playwright/.cache/
 my screenshots/
+
+/tests-examples/
