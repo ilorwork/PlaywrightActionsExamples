@@ -1,14 +1,8 @@
 import test, { chromium } from "@playwright/test";
 
-test("basic chromium session - no built-in fixtures", async ({}) => {
-  const browser = await chromium.launch();
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  await page.goto("https://playwright.dev/");
-});
-
 // page == tab
 // context == window
+
 test("multi tab chromium session", async () => {
   const browser = await chromium.launch();
   const context = await browser.newContext();
@@ -22,8 +16,6 @@ test("multi tab chromium session", async () => {
   await page2.goto("https://playwright.dev/");
 });
 
-// page == tab
-// context == window
 test("multi window chromium session", async () => {
   const browser = await chromium.launch();
   const context1 = await browser.newContext();
@@ -37,3 +29,11 @@ test("multi window chromium session", async () => {
   const pageOfWindow2 = await context2.newPage();
   await pageOfWindow2.goto("https://playwright.dev/");
 });
+
+// TODO: Add "launch chromium based browser by path" test
+// example here: https://stackoverflow.com/a/78034308/19574650
+
+// BrowserType chromium = playwright.chromium();
+//         System.out.println(chromium.executablePath());
+//         Browser browser = chromium.launch(new BrowserType.LaunchOptions()
+//                 .setExecutablePath(Path.of("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"));
