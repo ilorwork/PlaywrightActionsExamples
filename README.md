@@ -2,7 +2,7 @@
 
 Covering the most common Playwright-Actions with examples
 
-**As for now**, not all tests are runnable.
+**As for now not all tests are runnable.** <br>
 some may contains a minimal code just for POC.
 
 I hope in the nearest future to make more tests runable, and add classification for those who aren't.
