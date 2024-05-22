@@ -1,6 +1,6 @@
 # 🎭PlaywrightActionsExamples🎭
 
-Covering the most common Playwright-Actions with examples
+Covering all (WIP) Playwright-Actions with examples.
 
 **As for now not all tests are runnable.** <br>
 some may contains a minimal code just for POC.
