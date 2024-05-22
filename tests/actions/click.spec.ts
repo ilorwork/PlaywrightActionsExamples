@@ -27,6 +27,16 @@ test("mouse click by coordinates", async ({ page }) => {
   await page.pause();
 });
 
+test("mouse click by coordinates extracted from bounding box", async ({
+  page,
+}) => {
+  const box = await page.getByText("Get started").boundingBox();
+
+  // perform a click in the center point if the element
+  if (box)
+    await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+});
+
 // Docs - https://playwright.dev/docs/input#forcing-the-click
 test("forced mouse click", async ({ page }) => {
   await page.getByText("Get started").click({ force: true });
