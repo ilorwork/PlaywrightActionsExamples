@@ -6,18 +6,18 @@ test.beforeEach(async ({ page }) => {
 
 test.describe("focuse", () => {
   test("focuse on an element", async ({ page }) => {
-    await page.getByLabel("Password").focus();
+    await page.getByLabel("Search").focus();
   });
 });
 
 test.describe("blur", () => {
   test("blur out of an element", async ({ page }) => {
-    await page.getByLabel("Password").blur();
+    await page.getByLabel("Search").blur();
   });
 
   test("blur out of an element by dispatching a blur event", async ({
     page,
   }) => {
-    await page.getByLabel("Password").dispatchEvent("blur");
+    await page.getByLabel("Search").dispatchEvent("blur");
   });
 });
