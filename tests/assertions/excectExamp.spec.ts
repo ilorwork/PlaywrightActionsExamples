@@ -10,6 +10,6 @@ test("expect page title", async ({ page }) => {
 test("Ensures the Locator resolves to an exact number of DOM nodes", async ({
   page,
 }) => {
-  const list = page.locator("list > .component");
-  await expect(list).toHaveCount(3);
+  const buttonsList = page.locator("button");
+  await expect(buttonsList).toHaveCount(3);
 });
